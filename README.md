@@ -1,0 +1,2 @@
+# qqmusiclitefix
+修复QQ音乐简洁版在HyperOS4上无法上岛的问题，并解决QQ音乐简洁版无法自动跟随系统主题自适应深浅色
