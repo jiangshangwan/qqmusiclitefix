@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2026 江上晚 (jiangshangwan) <liyd9745@gmail.com>
+  SPDX-License-Identifier: GPL-3.0-only
+  qm-strings-1024
+-->
+<resources>
+    <string name="module_name">QQ音乐简洁版适配(酷安：江上晚)</string>
+    <!-- QM-DESC-38AC HyperOS 富媒体卡片适配 -->
+    <string name="module_desc">修复 QQ音乐简洁版播放时通知栏与锁屏无播放器控件：为媒体通知绑定 MediaSession，恢复 HyperOS 系统样式富媒体播放卡片。</string>
+</resources>

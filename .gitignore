@@ -1,0 +1,27 @@
+# Copyright (c) 2026 江上晚 (jiangshangwan) <liyd9745@gmail.com>
+# SPDX-License-Identifier: GPL-3.0-only
+# qm-ignore-2F81 · 仓库忽略规则
+
+# 本地签名密钥：绝不入库，避免他人冒名签署模块
+*.jks
+*.keystore
+
+# 本地环境配置：含本机 SDK 绝对路径
+local.properties
+
+# Gradle 构建产物与缓存
+.gradle/
+build/
+app/build/
+**/build/
+
+# IDE 配置
+.idea/
+*.iml
+.DS_Store
+
+# 编译中间文件
+*.class
+captures/
+.externalNativeBuild/
+.cxx/

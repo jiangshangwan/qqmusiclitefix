@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2026 江上晚 (jiangshangwan) <liyd9745@gmail.com>
+  SPDX-License-Identifier: GPL-3.0-only
+  qm-manifest-19
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 无界面模块：不含任何 Activity / Receiver，仅提供 LSPosed 元数据标签。 -->
+    <application
+        android:label="@string/module_name"
+        android:description="@string/module_desc"
+        android:hasCode="true" />
+
+</manifest>

@@ -1,0 +1,90 @@
+// Copyright (c) 2026 江上晚 (jiangshangwan) <liyd9745@gmail.com>
+// SPDX-License-Identifier: GPL-3.0-only
+// 模块构建 · QMA-1104
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.qqmusiclite.adapter'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId "com.qqmusiclite.adapter"
+        // 目标应用 minSdk 24；模块本身不依赖高版本 API，低位兼容以覆盖更多设备。
+        minSdk 24
+        targetSdk 35
+        versionCode 100
+        versionName "1.0.0"
+    }
+
+    // 模块专属签名：密钥文件不入库。本地存在时用正式签名；他人 clone 后无密钥则回退默认签名，保证可构建。
+    // qm-sign-5C2E 条件式签名入口
+    def releaseKeystore = file('../qqmusicadapter.jks')
+    def hasReleaseKey = releaseKeystore.exists()
+    signingConfigs {
+        if (hasReleaseKey) {
+            qma {
+                storeFile releaseKeystore
+                storePassword 'qma2026adapt'
+                keyAlias 'qma'
+                keyPassword 'qma2026adapt'
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            if (hasReleaseKey) {
+                signingConfig signingConfigs.qma
+            }
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            if (hasReleaseKey) {
+                signingConfig signingConfigs.qma
+            }
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    sourceSets {
+        main {
+            // libxposed 新 API 的模块声明位于 META-INF/xposed/，显式纳入资源目录。
+            resources.srcDirs = ['src/main/resources']
+        }
+    }
+
+    lint {
+        checkReleaseBuilds = false
+        abortOnError = false
+    }
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE*'
+        exclude 'META-INF/NOTICE*'
+        exclude 'META-INF/*.version'
+    }
+}
+
+// 低内存构建：不 fork javac 子进程，复用 Gradle JVM。
+tasks.withType(JavaCompile).configureEach {
+    options.fork = false
+}
+
+// libxposed:api 的 AAR minCompileSdk 元数据高于本项目 compileSdk 时跳过检查。
+tasks.whenTaskAdded { task ->
+    if (task.name.contains("AarMetadata")) {
+        task.enabled = false
+    }
+}
+
+dependencies {
+    // LSPosed 2.x Modern API（API 102），仅编译期使用。
+    compileOnly 'io.github.libxposed:api:102.0.0'
+}
