@@ -2,8 +2,9 @@
  * Copyright (c) 2026 江上晚 (jiangshangwan) <liyd9745@gmail.com>
  * SPDX-License-Identifier: GPL-3.0-only
  * qm-entry-19 · QQ音乐简洁版适配 模块入口
+ * qm-pkgmove-4E1A · 包路径 io.github.jiangshangwan.qqmusiclitefix
  */
-package com.qqmusiclite.adapter;
+package io.github.jiangshangwan.qqmusiclitefix;
 
 import android.util.Log;
 

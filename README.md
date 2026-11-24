@@ -79,14 +79,16 @@ QQ音乐简洁版（`com.tencent.freemusic`）在构建播放通知时使用了 
 
 模块元数据位于 `app/src/main/resources/META-INF/xposed/`：
 
-- `java_init.list`：入口 `com.qqmusiclite.adapter.XposedInit`
+- `java_init.list`：入口 `io.github.jiangshangwan.qqmusiclitefix.XposedInit`
 - `module.prop`：`minApiVersion=101`、`targetApiVersion=102`
 - `scope.list`：`com.tencent.freemusic`
+
+<!-- qm-readme-pkg-5D91 包路径说明同步 -->
 
 ## 目录结构
 
 ```text
-app/src/main/java/com/qqmusiclite/adapter/
+app/src/main/java/io/github/jiangshangwan/qqmusiclitefix/
 ├── XposedInit.java           模块入口与 hook 安装
 ├── MediaNotificationHook.java 媒体通知 / MediaSession / 卡片槽位适配
 └── ThemeAutoHook.java         Flutter 主题偏好覆盖

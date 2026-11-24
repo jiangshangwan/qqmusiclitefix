@@ -6,11 +6,13 @@ plugins {
 }
 
 android {
-    namespace 'com.qqmusiclite.adapter'
+    // qm-ns-2A5E 命名空间落到 io.github 域名路径
+    namespace 'io.github.jiangshangwan.qqmusiclitefix'
     compileSdk 35
 
     defaultConfig {
-        applicationId "com.qqmusiclite.adapter"
+        // qm-appid-6D8C 产物标识与命名空间保持一致
+        applicationId "io.github.jiangshangwan.qqmusiclitefix"
         // 目标应用 minSdk 24；模块本身不依赖高版本 API，低位兼容以覆盖更多设备。
         minSdk 24
         targetSdk 35

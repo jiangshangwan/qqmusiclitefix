@@ -2,8 +2,9 @@
  * Copyright (c) 2026 江上晚 (jiangshangwan) <liyd9745@gmail.com>
  * SPDX-License-Identifier: GPL-3.0-only
  * qm-hook-1a54 · 媒体通知 MediaSession 绑定适配
+ * qm-pkgmove-9C3F · 包路径 io.github.jiangshangwan.qqmusiclitefix
  */
-package com.qqmusiclite.adapter;
+package io.github.jiangshangwan.qqmusiclitefix;
 
 import android.app.Notification;
 import android.app.NotificationChannel;

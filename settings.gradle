@@ -1,6 +1,7 @@
 // Copyright (c) 2026 江上晚 (jiangshangwan) <liyd9745@gmail.com>
 // SPDX-License-Identifier: GPL-3.0-only
-// 适配模块：com/jiangshangwan/qqmusicadapter · qm-adapt-102
+// 适配模块：io/github/jiangshangwan/qqmusiclitefix · qm-adapt-102
+// qm-settings-pkg-3E7A 路径声明同步至新包名
 pluginManagement {
     repositories {
         google()
