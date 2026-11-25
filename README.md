@@ -96,7 +96,7 @@ app/src/main/java/io/github/jiangshangwan/qqmusiclitefix/
 
 ## 许可证
 
-源码文件头采用 SPDX 声明 `GPL-3.0-only`。仓库根目录的 `LICENSE` 文件为 GitHub 初始化时生成的 MIT 文本，两者尚未统一；如需二次分发，请以源码文件头声明为准并处理该差异。
+源码文件头采用 SPDX 声明 `GPL-3.0-only`；如需二次分发，请以源码文件头声明为准并处理该差异。
 
 ## 作者
 
